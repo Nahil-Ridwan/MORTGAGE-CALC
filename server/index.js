@@ -3,7 +3,12 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors({ origin: "https://mortgage-calc-hsey.onrender.com/" }));
+app.use(cors({
+  origin: 'https://mortgage-calc-hsey.onrender.com', // no trailing slash
+  methods: ['POST'],
+  credentials: true
+}));
+
 app.use(cors());
 app.use(express.json());
 
