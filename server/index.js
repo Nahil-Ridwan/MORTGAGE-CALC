@@ -1,8 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-app.use(cors({ origin: "https://mortgage-calc-hsey.onrender.com/" }));
+
 const app = express();
 
+app.use(cors({ origin: "https://mortgage-calc-hsey.onrender.com/" }));
 app.use(cors());
 app.use(express.json());
 
