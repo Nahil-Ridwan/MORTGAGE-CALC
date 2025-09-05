@@ -10,7 +10,7 @@ const MortgageCalculator = () => {
 
   const handleCalculate = async () => {
     try {
-      const res = await axios.post('https://mortgage-calc-backend.onrender.com', {
+      const res = await axios.post('https://mortgage-calc-backend.onrender.com/calculate', {
         principal,
         rate,
         years,

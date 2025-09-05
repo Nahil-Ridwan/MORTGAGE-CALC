@@ -10,7 +10,7 @@ const MortgageCalculator = () => {
 
   const handleCalculate = async () => {
     try {
-      const res = await axios.post('https://mortgage-calc-backend.onrender.com', {
+      const res = await axios.post('https://mortgage-calc-backend.onrender.com/calculate', {
         principal,
         rate,
         years,
@@ -30,7 +30,7 @@ const MortgageCalculator = () => {
         <TextField label="Annual Interest Rate (%)" type="number" value={rate} onChange={e => setRate(e.target.value)} />
         <TextField label="Loan Term (Years)" type="number" value={years} onChange={e => setYears(e.target.value)} />
         <Button variant="contained" onClick={handleCalculate}>Calculate</Button>
-        { (
+        {monthlyPayment && (
           <Typography variant="h6" color="primary">
             Monthly Payment: ₹{monthlyPayment}
           </Typography>
